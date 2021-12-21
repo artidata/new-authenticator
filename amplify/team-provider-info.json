@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "newauthenticator36a41505": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dd9mu5mon0sln",
+          "type": "manual"
+        }
       }
     }
   }
