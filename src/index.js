@@ -3,13 +3,16 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Authenticator } from "@aws-amplify/ui-react";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Authenticator.Provider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Authenticator.Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
