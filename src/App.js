@@ -1,5 +1,9 @@
 import { Amplify } from "aws-amplify";
-import { Authenticator, useAuthenticator, withAuthenticator } from "@aws-amplify/ui-react";
+import {
+  Authenticator,
+  useAuthenticator,
+  withAuthenticator,
+} from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
@@ -12,7 +16,7 @@ function App() {
   if (user) {
     return (
       <div>
-        <h1>Basic Example</h1>
+        <h1>Post Login</h1>
         <h1>Hello {user.attributes.email}</h1>
         <button style={{ width: "50px" }} onClick={signOut}>
           Sign Out
@@ -48,7 +52,12 @@ function App() {
       </div>
     );
   } else {
-    return <Authenticator variation="modal" />;
+    return (
+      <div>
+        <h1>Pre Login</h1>
+        <Authenticator variation="modal" />
+      </div>
+    );
   }
 }
 
