@@ -1,12 +1,12 @@
 import { Amplify } from "aws-amplify";
-import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
+import { Authenticator, useAuthenticator, withAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 
-export default function App() {
+function App() {
   const { user, signOut } = useAuthenticator();
 
   if (user) {
@@ -73,3 +73,5 @@ function Layout() {
     </div>
   );
 }
+
+export default withAuthenticator(App);
