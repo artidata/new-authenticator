@@ -23,10 +23,6 @@ export default function App() {
     return (
       <div>
         <h1>Post Login</h1>
-        <h1>Hello {user.attributes.email}</h1>
-        <div style={{ width: "50px" }}>
-          <AmplifySignOut />
-        </div>
         <Routes>
           <Route path="/" element={<LayoutPost />}>
             <Route
@@ -56,13 +52,17 @@ export default function App() {
             <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
         </Routes>
+        <h1>Hello {user.attributes.email}</h1>
+        <div style={{ width: "50px" }}>
+          <AmplifySignOut />
+        </div>
+        
       </div>
     );
   } else {
     return (
       <div>
         <h1>Pre Login</h1>
-        <AmplifyAuthenticator />
         <Routes>
           <Route path="/" element={<LayoutPre />}>
             <Route
@@ -92,6 +92,7 @@ export default function App() {
             <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
         </Routes>
+        <AmplifyAuthenticator />
       </div>
     );
   }
