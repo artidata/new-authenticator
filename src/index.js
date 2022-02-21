@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { Authenticator } from "@aws-amplify/ui-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Authenticator.Provider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Authenticator.Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
